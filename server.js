@@ -24,12 +24,24 @@ var server = http.createServer(function (request, response) {
 	if (path === '/') {
 		response.statusCode = 200
 		response.setHeader('Content-Type', 'text/html;charset=utf-8')
-		response.write(`连接成功`)
+		response.write(`<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>sever-test</title>
+			<link rel="stylesheet" href="/style.css">
+		</head>
+		<body>
+			<h1>连接成功</h1>
+		</body>
+		</html>`)
 		response.end()
 	} else if (path === '/style.css') {
 		response.statusCode = 200
 		response.setHeader('Content-Type', 'text/css;charset=utf-8')
-		response.write(`body{color: red;}`)
+		response.write(`h1{color: red;}`)
 		response.end()
 	} else {
 		response.statusCode = 404
