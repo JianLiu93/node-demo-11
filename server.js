@@ -26,7 +26,7 @@ var server = http.createServer(function (request, response) {
 		response.setHeader('Content-Type', 'text/html;charset=utf-8')
 		response.write(`连接成功`)
 		response.end()
-	} else if (path === '/x') {
+	} else if (path === '/style.css') {
 		response.statusCode = 200
 		response.setHeader('Content-Type', 'text/css;charset=utf-8')
 		response.write(`body{color: red;}`)
@@ -42,5 +42,5 @@ var server = http.createServer(function (request, response) {
 })
 
 server.listen(port)
-console.log('监听 ' + port + ' 成功\n请用电饭煲打开 http://localhost:' + port)
+console.log('监听 ' + port + ' 成功\n请用浏览器打开 http://localhost:' + port)
 
